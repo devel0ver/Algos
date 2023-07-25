@@ -59,8 +59,9 @@ const addTwoNumbers = (l1, l2) => {
         arr.push(result.val);
         result = result.next;
     }
+    arr.splice(0, 1);
     return arr;
 };
 
 
-console.log(addTwoNumbers(toLinked_L1([2,4,3]), toLinked_L2([5,6,4])));
+console.log(addTwoNumbers(toLinked_L1([2,4,3,5]), toLinked_L2([5,6,4,1])));
