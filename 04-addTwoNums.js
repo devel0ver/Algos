@@ -28,7 +28,7 @@ const toLinked_L2 = (l2) => {
 const addTwoNumbers = (l1, l2) => {
     let carry = 0,
         result = new ListNode(0),
-        current = result;
+        current = result,
         arr = [];
 
     //step 1: I want to traverse the link list using a while loop
@@ -54,14 +54,19 @@ const addTwoNumbers = (l1, l2) => {
         if(l2) l2 = l2.next;
     }
     if(carry) current.next = new ListNode(carry);
-    // return result.next.val;
     while(result){
         arr.push(result.val);
         result = result.next;
     }
+    let reversedArr = [];
+    for(var i = arr.length - 1; i > -1; i--){
+        reversedArr.push(arr[i]);
+    }
     arr.splice(0, 1);
-    return arr;
+    reversedArr.splice(0,1);
+    return [arr, reversedArr];
 };
 
-
-console.log(addTwoNumbers(toLinked_L1([2,4,3,5]), toLinked_L2([5,6,4,1])));
+console.log(addTwoNumbers(toLinked_L1([2,4,3]), toLinked_L2([5,6,4])));
+console.log(addTwoNumbers(toLinked_L1([1,5,6,9]), toLinked_L2([3,5,3,2])));
+console.log(addTwoNumbers(toLinked_L1([9,4,1,5,1]), toLinked_L2([2,7,4,5])));
