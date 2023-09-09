@@ -1,2 +1,4 @@
-
-    // console.log(`Reversed: ${arr.reverse()}`);
+if(arr[0] === lastDigit)
+    //     return true;
+    // else
+    //     return false;
