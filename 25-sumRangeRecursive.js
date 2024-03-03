@@ -1,8 +1,12 @@
-const sumRange = (num) =>{
-    if(num === 1) return 1;
-    return num + sumRange(num-1);
+// const sumRange = (num) =>{
+//     if(num === 1) return 1;
+//     return num + sumRange(num-1);
+// }
+// console.log(sumRange(4));
+const sumRange = (arr) =>{
+    return arr.map((item) => item * 2)
 }
-console.log(sumRange(4));
+console.log(sumRange([2,4,5,3]));
 /*
     return num + sumRange(num-1)
 

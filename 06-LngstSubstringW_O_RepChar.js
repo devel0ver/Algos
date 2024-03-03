@@ -5,7 +5,6 @@ const LengthOfLongestSubstring = (s) => {
   let set = new Set(),
     left = 0,
     maxSize = 0;
-
   if (s.length == 0) return 0;
   if (s.length == 1) return 1;
 
@@ -16,13 +15,14 @@ const LengthOfLongestSubstring = (s) => {
     }
     set.add(s[i]); 
     maxSize = Math.max(maxSize, i - left + 1);
-}
-console.log(maxSize);
+    console.log(set)
+  }
+  return maxSize
 };
 
-LengthOfLongestSubstring("abcabc"); // The answer is "abc", with the length of 3.
-LengthOfLongestSubstring("bbbb"); // The answer is "b", with the length of 1.
-LengthOfLongestSubstring("pwwkew"); // The answer is "wke", with the length of 3.
+console.log(LengthOfLongestSubstring("abcabc")); // The answer is "abc", with the length of 3.
+console.log(LengthOfLongestSubstring("bbbb")); // The answer is "b", with the length of 1.
+console.log(LengthOfLongestSubstring("pww")); // The answer is "wke", with the length of 3.
 
 /*
 Our left one essentially displays the beginning of our window, 
